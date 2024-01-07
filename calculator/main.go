@@ -4,26 +4,45 @@ import "fmt"
 
 
 
-func add(a, b int) int {
-  return a + b
-}
-
-func sub(a,b int) int {
-	return a - b
-}
-func mul(a,b int) int {
-	return a * b
-}
-
-func div(a,b int) int {
-   if  b == 0 {
-	fmt.Println("cannot be divided by zero")
-   }
-   return a / b
-}
-
-
 func main(){
-   fmt.Println(add, "Enter your number:")
-   
+  var operator string
+  var a, b int
+
+   fmt.Println("Please enter first number: ")
+   fmt.Scan(& a)
+
+   fmt.Println("Please enter first number: ")
+   fmt.Scan(& b)
+
+    fmt.Println("Please enter operator(+,_,/,*,%):")
+   fmt.Scan(& operator)
+
+    result := 0 
+
+  switch operator {
+
+    case "+":
+      result = a + b
+    break
+
+    case "-":
+      result = a - b
+    break
+
+    case "*":
+      result = a * b
+    break
+
+    case "/":
+      result = a / b
+    break
+
+    case "%":
+      result = a % b
+    break
+
+    default:
+    fmt.Println("Invalid Operation")
+  }
+  fmt.Printf("%d %s %d = %d", a, operator, b, result)
 }
